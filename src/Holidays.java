@@ -12,7 +12,17 @@ public class Holidays {
       "15/11/2023 => Proclamação da República",
       "25/12/2023 => Natal" };
 
-  public String[] getHolidays(){
+  public String[] getHolidays() {
     return this.holidays;
+  }
+
+  public String isHoliday(String date) {
+    for (int i = 0; i < holidays.length; i++) {
+      if(holidays[i].contains(date)){
+        return holidays[i].substring(14);
+      }
+    }
+
+    return "Não existe feriado neste dia";
   }
 }
